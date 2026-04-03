@@ -1,9 +1,10 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="ru" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ирбис-Web</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -20,8 +21,37 @@
   </script>
 </head>
 
+<body class="bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 min-h-screen">
+{% include 'sidebar.html' %}
 {% block content %}
 
-{% endblock %}
+{% endblock content %}
+<aside class="w-64 bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800 flex flex-col">
+      <div class="p-5 h-16 border-b border-gray-200 dark:border-gray-800">
+        <div class="text-xl font-bold text-primary-600">ИРБИС-Web</div>
+      </div>
+      <nav class="flex-1 p-3 space-y-1">
+        <a href="{% url 'home' %}" id="btn-komplektator"
+          class="w-full text-left px-4 py-2.5 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+          Комплектатор
+        </a>
+
+        <button id="btn-katalogizator"
+          class="w-full text-left px-4 py-2.5 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+          Каталогизатор
+        </button>
+
+      </nav>
+      <div class="p-3 border-t border-gray-200 dark:border-gray-800">
+        <button id="logout"
+          class="w-full py-2 px-4 bg-red-600 hover:bg-red-700 text-white rounded transition">Выйти</button>
+      </div>
+    </aside>
+
+    </div>
+    </main>
+  </div>
+</body>
+<script src="{% static 'app.js' %}"></script>
 
 </html>

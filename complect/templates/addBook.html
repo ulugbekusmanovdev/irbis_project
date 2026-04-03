@@ -1,0 +1,223 @@
+{% extends 'base.html' %}
+{% block content %}
+
+        <div id="ksuPage" class="flex flex-col gap-4">
+          
+
+          <!-- Второй блок: форма ввода/редактирования КСУ -->
+          <div id="blockKsu" class="hidden bg-white dark:bg-gray-800 rounded-lg shadow p-6 flex flex-col gap-4">
+            <div id="mainTable">
+
+                <div class="px-6 py-3 border-b font-medium text-lg flex justify-between items-center">
+              <span>Ввод/Редактирование КСУ</span>
+            </div>
+
+            <div class="p-4 flex flex-col gap-3">
+              
+              <table class="w-full border-collapse text-left text-sm">
+                <thead>
+                  <tr class="bg-gray-200 dark:bg-gray-700">
+                    <th class="px-4 py-2">✓ Название элемента</th>
+                    
+                    <th class="px-4 py-2">Значение</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class=" dark:bg-purple-900/30">
+                    <td class="px-4 py-2 border-t flex items-center gap-2">
+                      88: Сведения о поступлении книг в библиотеку
+                      
+                    </td>
+                    
+                    
+                  </tr>
+                  <tr>
+                  <tr class=" dark:bg-purple-900/30">
+                    <td class="px-4 py-2 border-t">Год и номер записи в КСУ</td>
+                    <td class="px-4 py-2 border-t"><input type="text" class="w-full px-2 py-1 border rounded"></td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-2 border-t">Номер акта индивидуального учета</td>
+                    <td class="px-4 py-2 border-t"><input type="text" value="20260210"
+                        class="w-full px-2 py-1 border rounded"></td>
+                  </tr>
+              
+                  <tr>
+                    <td class="px-4 py-2 border-t">Номер сопроводительного документа</td>
+                    <td class="px-4 py-2 border-t"><input type="text" class="w-full px-2 py-1 border rounded"></td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-2 border-t">Источник комплектования (КОД)</td>
+                    <td class="px-4 py-2 border-t"><input type="text" class="w-full px-2 py-1 border rounded"></td>
+                  </tr>
+                 
+                  <tr>
+                    <td class="px-4 py-2 border-t">Число наименований</td>
+                    <td class="px-4 py-2 border-t"><input type="text" class="w-full px-2 py-1 border rounded"></td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-2 border-t">Число экземпляров</td>
+                    <td class="px-4 py-2 border-t"><input type="text" class="w-full px-2 py-1 border rounded"></td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-2 border-t">На сумму</td>
+                    <td class="px-4 py-2 border-t"><input type="text" class="w-full px-2 py-1 border rounded"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="px-4 py-2 border-t">Дата</td>
+                    <td class="px-4 py-2 border-t"><input type="text" class="w-full px-2 py-1 border rounded"></td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-2 border-t">ФИО</td>
+                    <td class="px-4 py-2 border-t">
+                      <select class="w-full px-2 py-1 border rounded bg-white dark:bg-gray-700">
+                        <option value="">Выберите сотрудника</option>
+                        <option value="Дунаевская Светлана Михайловна">ДСМ - Дунаевская Светлана Михайловна</option>
+                        <option value="Дунячкова Надежда Дмитриевна">ДНД - Дунячкова Надежда Дмитриевна</option>
+                        <option value="Сбойчакова Надежда Дмитриевна">СНД - Сбойчакова Надежда Дмитриевна</option>
+                        <option value="Сорокина Лариса Васильевна">СЛВ - Сорокина Лариса Васильевна</option>
+                      </select>
+                    </td>
+                  </tr>
+                  </tr>
+
+                  
+                </tbody>
+              </table>
+            </div>
+
+            </div>
+            
+            <div id="distributionTable" class="hidden">
+              <div class="font-medium mb-4">Данные распределения партии</div>
+              <table class="w-full border-collapse text-left text-sm">
+                <thead>
+                  <tr class="bg-gray-200 dark:bg-gray-700">
+                    <th class="px-4 py-2">✓ Название элемента</th>
+
+                    <th class="px-4 py-2">Значение</th>
+                  </tr>
+                </thead>
+                <tbody>
+                 
+                  <tr>
+                    <td class="px-4 py-2 border-t flex items-center gap-2">
+                      45: РАСПРЕДЕЛЕНИЕ партии: По типу документа
+                      
+                    </td>
+                    
+                  </tr>
+                  <tr>
+                    <tr class=" dark:bg-purple-900/30">
+              <td class="px-4 py-2 border-t">A: Книги на баланс</td>
+              <td class="px-4 py-2 border-t"><input type="text" class="w-full px-2 py-1 border rounded"></td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border-t">B: Брошюры</td>
+              <td class="px-4 py-2 border-t"><input type="text" class="w-full px-2 py-1 border rounded"></td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border-t">C: Журналы</td>
+              <td class="px-4 py-2 border-t"><input type="text" class="w-full px-2 py-1 border rounded"></td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border-t">D: Аудио/Видео</td>
+              <td class="px-4 py-2 border-t"><input type="text" class="w-full px-2 py-1 border rounded"></td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border-t">E: Карты</td>
+              <td class="px-4 py-2 border-t"><input type="text" class="w-full px-2 py-1 border rounded"></td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border-t">F: Ноты</td>
+              <td class="px-4 py-2 border-t"><input type="text" class="w-full px-2 py-1 border rounded"></td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border-t">G: Электронные издания</td>
+              <td class="px-4 py-2 border-t"><input type="text" class="w-full px-2 py-1 border rounded"></td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border-t">X: Прочие</td>
+              <td class="px-4 py-2 border-t"><input type="text" class="w-full px-2 py-1 border rounded"></td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border-t">1: русский язык</td>
+              <td class="px-4 py-2 border-t"><input type="text" class="w-full px-2 py-1 border rounded"></td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border-t">2: национальный язык</td>
+              <td class="px-4 py-2 border-t"><input type="text" class="w-full px-2 py-1 border rounded"></td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border-t">3: другой язык</td>
+              <td class="px-4 py-2 border-t"><input type="text" class="w-full px-2 py-1 border rounded"></td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border-t">4: Всего наименований без периодики</td>
+              <td class="px-4 py-2 border-t"><input type="text" class="w-full px-2 py-1 border rounded"></td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border-t">5: Всего экземпляров</td>
+              <td class="px-4 py-2 border-t"><input type="text" class="w-full px-2 py-1 border rounded"></td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border-t">6: Всего на сумму</td>
+              <td class="px-4 py-2 border-t"><input type="text" class="w-full px-2 py-1 border rounded"></td>
+            </tr>
+           
+           
+            
+            
+            <tr class=" border-t">
+              <td class="px-4 py-2"><span>47: По разделам знаний (меню RZN) </span></td>
+               <td class="px-4 py-2 ">
+                <select class="w-full px-2 py-1 border rounded bg-white dark:bg-gray-700">
+                  <option value="">Выберите</option>
+                  <option value="1">1 - Естествознаные науки</option>
+                  <option value="2">2 - Техника.Технические науки</option>
+                  <option value="3">3 - Сельское хозяйство</option>
+                  <option value="4">4 - Медицина</option>
+                  <option value="5">5 - История.Экономика.Социология</option>
+                  <option value="6">6 - Культура.Наука.Средства массовой информации.Образования.Библиотечное и музейное
+                    дело</option>
+                  <option value="7">7 - Спорт</option>
+                  <option value="8">8 - Языкознания</option>
+                  <option value="9">9 - Литературоведения</option>
+                  <option value="10">10 - Художественная литература</option>
+                  <option value="11">11 - Искусство</option>
+                  <option value="12">12 - Религия</option>
+                  <option value="13">13 - Философия</option>
+                  <option value="14">14 - Психология</option>
+                  <option value="15">15 - Справочная литература</option>
+                </select>
+              </td>
+            </tr>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="px-6 py-3 border-t bg-gray-50 dark:bg-gray-900 flex justify-between flex-wrap gap-2">
+              <div class="flex gap-3 flex-wrap">
+                <button id="btnMain"
+                  class="tab-btn px-4 py-2 bg-indigo-600 text-white font-medium rounded hover:bg-indigo-700">Ввод записи
+                  в КСУ поступлений</button>
+                <button id="btnDistribution" class="tab-btn px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">Данные
+                  распределения</button>
+              </div>
+              <div class="flex gap-3">
+                <button id="ksuInputBtn"
+                  class="px-6 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded flex items-center gap-2">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Ввод
+                </button>
+                <button id="ksuCancel"
+                  class="px-6 py-2 border border-red-300 text-red-600 rounded hover:bg-red-50">Отказ</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+{% endblock content %}
