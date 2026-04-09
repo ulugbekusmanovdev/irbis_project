@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ирбис-Web</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -24,7 +25,7 @@
 <body class="bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 min-h-screen">
 
 
-<div id="app" class="hidden flex h-screen">
+<div id="app" class="flex h-screen">
     <aside class="w-64 bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800 flex flex-col">
       <div class="p-5 h-16 border-b border-gray-200 dark:border-gray-800">
         <div class="text-xl font-bold text-primary-600">ИРБИС-Web</div>
@@ -55,7 +56,7 @@
           <div
             class="w-8 h-8 rounded-full bg-primary-600 flex items-center justify-center text-white text-sm font-medium">
             С</div>
-          <span>Sasha</span>
+          <span>{{request.user}}</span>
         </div>
       </header>
       <main class="flex-1 p-6 overflow-auto">

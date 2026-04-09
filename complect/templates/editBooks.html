@@ -26,7 +26,7 @@
                
 
                   {% csrf_token %}
-                  {{ post_form|crispy }}
+                  {{ form|crispy }}
 
 
              
@@ -48,22 +48,23 @@
                 </thead>
                 
 
-               
+                
+
                   {% csrf_token %}
                   {{ rasp_form|crispy }}
-
-
-                  <!-- <button type="submit">Add</button> -->
+<!-- 
+<button type="submit">Изменить</button> -->
+                  
                 
                 
               </table>
             </div>
             <div class="px-6 py-3 border-t bg-gray-50 dark:bg-gray-900 flex justify-between flex-wrap gap-2">
               <div class="flex gap-3 flex-wrap">
-                <button id="btnMain"
+                <button type="button" id="btnMain"
                   class="tab-btn px-4 py-2 bg-indigo-600 text-white font-medium rounded hover:bg-indigo-700">Ввод записи
                   в КСУ поступлений</button>
-                <button id="btnDistribution" class="tab-btn px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">Данные
+                <button type="button" id="btnDistribution" class="tab-btn px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">Данные
                   распределения</button>
               </div>
               <div class="flex gap-3">
