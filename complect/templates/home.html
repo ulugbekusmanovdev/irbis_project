@@ -11,26 +11,99 @@
 
             <div class="p-4 flex gap-4">
               <div class="w-full border-r border-gray-300 dark:border-gray-600 pr-4">
+                
                 <button id="newKsuBtn" class="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded mb-3">
-                  + Новая КСУ
+                  <a href="{% url 'addBook' %}">+ Новая КСУ</a>
                 </button>
+
                 <div class="font-medium mb-2">Номер КСУ (номер акта):</div>
                 <ul class="space-y-1">
-                  <li class="flex items-center gap-2 bg-blue-100 dark:bg-blue-900/30 p-1 rounded">
+                  {% for i in books %}
+                  <!-- <li class="flex items-center gap-2 bg-blue-100 dark:bg-blue-900/30 p-1 rounded">
                     <input type="checkbox" checked class="w-4 h-4">
-                    <span class="flex-1">1 2024</span>
-                    <button class="px-2 py-1 text-sm bg-gray-200 rounded hover:bg-gray-300 edit-btn">Изменить</button>
-                  </li>
-                  <li class="flex items-center gap-2 p-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">
-                    <input type="checkbox" class="w-4 h-4">
-                    <span class="flex-1">1 2024/01</span>
-                    <button class="px-2 py-1 text-sm bg-gray-200 rounded hover:bg-gray-300 edit-btn">Изменить</button>
-                  </li>
+                    <span class="flex-1">{{i.date_numksu}}</span>
+                    <button class="text-white  px-2 py-1 text-sm bg-green-500 rounded hover:bg-green-700  read-btn"><a href="">Смотреть</a></button>
+                    <button class="text-white  px-2 py-1 text-sm bg-blue-500 rounded  hover:bg-blue-700 edit-btn"><a href="{% url 'editBook' i.id %}">Изменить</a></button>
+                    <button class="text-white  px-2 py-1 text-sm bg-red-500  rounded  hover:bg-red-700 del-btn"><a href="">Удалить</a></button>
+                  </li>  -->
+                  <li class="flex flex-col gap-2 bg-blue-100 dark:bg-blue-900/30 p-2 rounded">
+
+  <div class="flex items-center gap-2">
+    <input type="checkbox" checked class="w-4 h-4">
+
+    <span class="flex-1">{{i.date_numksu}}</span>
+
+    <button 
+      type="button"
+      onclick="toggleAccordion(this)"
+      class="text-white px-2 py-1 text-sm bg-green-500 rounded hover:bg-green-700">
+      Смотреть
+    </button>
+
+    <button class="text-white px-2 py-1 text-sm bg-blue-500 rounded hover:bg-blue-700">
+      <a href="{% url 'editBook' i.id %}">Изменить</a>
+    </button>
+
+    <button class="text-white px-2 py-1 text-sm bg-red-500 rounded hover:bg-red-700">
+      Удалить
+    </button>
+  </div>
+
+  <div class="accordion hidden bg-white dark:bg-gray-800 rounded p-2">
+    <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-300">
+      <li class="font-bold" >ФИО:</li>
+      <li class="font-bold" >Год и номер записи в КСУ:</li>
+      <li class="font-bold" >Номер акта индивидуального учета: </li>
+      <li class="font-bold" >Номер сопроводительного документа: </li>
+      <li class="font-bold" >Источник комплектования (КОД): </li>
+      <li class="font-bold" >Число наименований: </li>
+      <li class="font-bold" >Число экземпляров: </li>
+      <li class="font-bold" >На сумму*:</li>
+      <li class="font-bold" >По разделам знаний*:</li>
+      <li class="font-bold" >Книги на баланс: </li>
+      <li class="font-bold" >Брошюры:  </li>
+      <li class="font-bold" >Журналы:  </li>
+      <li class="font-bold" >Аудио/Видео:  </li>
+      <li class="font-bold" >Карты:  </li>
+      <li class="font-bold" >Электронные издания:  </li>
+      <li class="font-bold" >Прочие: </li>
+      <li class="font-bold" >Русский язык: </li>
+      <li class="font-bold" >Национальный язык:  </li>
+      <li class="font-bold" >Другой язык:   </li>
+      <li class="font-bold" >Всего наименований без периодики:  </li>
+      <li class="font-bold" >Всего экземпляров:   </li>
+      <li class="font-bold" >Всего на сумму*:   </li>
+    </ul>
+  </div>
+
+</li>
+
+
+                  {% endfor %}
                 </ul>
               </div>
 
               
             </div>
           </div>
+
+  
+<script>
+  function toggleAccordion(btn) {
+    const currentItem = btn.closest('li');
+    const currentAccordion = currentItem.querySelector('.accordion');
+
+    // закрываем все остальные
+    document.querySelectorAll('.accordion').forEach(acc => {
+      if (acc !== currentAccordion) {
+        acc.classList.add('hidden');
+      }
+    });
+
+    // переключаем текущий
+    currentAccordion.classList.toggle('hidden');
+  }
+</script>
+
 
 {% endblock content %}
