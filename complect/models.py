@@ -42,6 +42,7 @@ class Raspredeleny(models.Model):
     russian = models.CharField(null=True, blank=True,max_length=200, verbose_name='русский язык')
     national = models.CharField(null=True, blank=True,max_length=200, verbose_name='национальный язык')
     other = models.CharField(null=True, blank=True,max_length=200, verbose_name='другой язык')
+    inv_num = models.CharField(null=True, blank=True,max_length=200, verbose_name='Макс. и мин. инв номера партии')
     bez_periodiki = models.CharField(null=True, blank=True,max_length=200, verbose_name='Всего наименований без периодики')
     all_examp = models.CharField(null=True, blank=True,max_length=200, verbose_name='Всего экземпляров')
     summa = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='Всего на сумму')
