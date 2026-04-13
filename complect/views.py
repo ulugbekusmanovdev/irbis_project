@@ -11,8 +11,9 @@ def login(request):
 
 def home_page(request):
     books = Postupleny.objects.all()
+    books1 = Raspredeleny.objects.all()
 
-    context = {'books': books}
+    context = {'books': books, 'books1': books1}
     return render(request, 'home.html', context)
 
 def addBook(request):

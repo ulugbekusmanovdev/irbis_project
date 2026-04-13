@@ -18,7 +18,7 @@
 
                 <div class="font-medium mb-2">Номер КСУ (номер акта):</div>
                 <ul class="space-y-1">
-                  {% for i in books %}
+                  {% for i in books%}
                   <!-- <li class="flex items-center gap-2 bg-blue-100 dark:bg-blue-900/30 p-1 rounded">
                     <input type="checkbox" checked class="w-4 h-4">
                     <span class="flex-1">{{i.date_numksu}}</span>
@@ -59,6 +59,7 @@
       <li class="font-bold" >Число наименований: {{i.date_naimen}}</li>
       <li class="font-bold" >Число экземпляров: {{i.date_ekzam}}</li>
       <li class="font-bold" >На сумму*: {{i.price}}</li>
+      {% for i in books1 %}
       <li class="font-bold" >По разделам знаний*: {{i.category}}</li>
       <li class="font-bold" >Книги на баланс: {{i.books}}</li>
       <li class="font-bold" >Брошюры: {{i.broshur}} </li>
@@ -74,6 +75,7 @@
       <li class="font-bold" >Всего наименований без периодики: {{i.bez_periodiki}} </li>
       <li class="font-bold" >Всего экземпляров: {{i.all_examp}}  </li>
       <li class="font-bold" >Всего на сумму*:  {{i.summa}} </li>
+      {% endfor %}
     </ul>
   </div>
 
