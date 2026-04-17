@@ -8,8 +8,4 @@ class PostuplenyForm(forms.ModelForm):
         fields = '__all__'
 
 
-class RaspredelenyForm(forms.ModelForm):
-    class Meta:
-        model = Raspredeleny
-        fields = '__all__'
 
